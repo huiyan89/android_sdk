@@ -590,6 +590,10 @@ If you want to check the validity of In-App Purchases made in your app using Pur
 
 ### <a id="event-parameters"></a>Event parameters
 
+In addition to the data points that Adjust collects [by default](https://partners.adjust.com/placeholders/), you can use the Adjust SDK to track and add to the events as many custom values as you need (user IDs, product IDs...). Custom parameters are only available as raw data (i.e., they won't appear in the Adjust dashboard).
+
+You should use Callback parameters for the values that you collect for your own internal use, and Partner parameters for those that you wish to share with external partners. If a value (e.g. product ID) is tracked both for internal use and to forward it to external partners, the best practice would be to track it both as callback and partner parameter.
+
 ### <a id="callback-parameters"></a>Event callback parameters
 
 You can register a callback URL for your events in your [dashboard]. We will send a GET request to that URL whenever the event is tracked. You can add callback parameters to that event by calling `addCallbackParameter` to the event instance before tracking it. We will then append these parameters to your callback URL.
