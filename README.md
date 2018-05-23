@@ -5,10 +5,10 @@ This is the Android SDK of Adjust™. You can read more about Adjust™ at [adju
 If your app is an app which uses web views and you would like to use Adjust tracking from Javascript code, please consult
 our [Android web views SDK guide](doc/english/web_views.md).
 
-## Table of contents
+### Quick Start
 
 * [Example app](#example-app)
-* [Basic integration](#basic-integration)
+* [Getting Started](#getting-started)
    * [Add the SDK to your project](#sdk-add)
    * [Add Google Play Services](#sdk-gps)
    * [Add permissions](#sdk-permissions)
@@ -23,17 +23,34 @@ our [Android web views SDK guide](doc/english/web_views.md).
       * [API level between 9 and 13](#session-tracking-api9)
    * [Adjust logging](#adjust-logging)
    * [Build your app](#build-the-app)
-* [Additional features](#additional-features)
+   
+### Deep linking
+
+   * [Deep linking](#deeplinking)
+      * [Standard deep linking scenario](#deeplinking-standard)
+      * [Deferred deep linking scenario](#deeplinking-deferred)
+      * [Reattribution via deep links](#deeplinking-reattribution)
+      
+### Event Tracking
+
    * [Event tracking](#event-tracking)
       * [Track revenue](#revenue-tracking)
       * [Revenue deduplication](#revenue-deduplication)
       * [In-App Purchase verification](#iap-verification)
-      * [Callback parameters](#callback-parameters)
-      * [Partner parameters](#partner-parameters)
+      
+### Custom Parameters
+
+   * [Event Parameters](#event-parameters)
+     * [Event callback parameters](#callback-parameters)
+     * [Event partner parameters](#partner-parameters)
    * [Session parameters](#session-parameters)
-      * [Session callback parameters](#session-callback-parameters)
-      * [Session partner parameters](#session-partner-parameters)
+     * [Session callback parameters](#session-callback-parameters)
+     * [Session partner parameters](#session-partner-parameters)
       * [Delay start](#delay-start)
+
+### Additional Features
+
+   * [Push token (Uninstall/Reinstall tracking)](#push-token)      
    * [Attribution callback](#attribution-callback)
    * [Session and event callbacks](#session-event-callbacks)
    * [Disable tracking](#disable-tracking)
@@ -46,13 +63,11 @@ our [Android web views SDK guide](doc/english/web_views.md).
       * [Amazon advertising identifier](#di-amz-adid)
       * [Adjust device identifier](#di-adid)
    * [User attribution](#user-attribution)
-   * [Push token](#push-token)
    * [Track additional device identifiers](#track-additional-ids)
    * [Pre-installed trackers](#pre-installed-trackers)
-   * [Deep linking](#deeplinking)
-      * [Standard deep linking scenario](#deeplinking-standard)
-      * [Deferred deep linking scenario](#deeplinking-deferred)
-      * [Reattribution via deep links](#deeplinking-reattribution)
+
+### Testing and Troubleshooting
+
 * [Troubleshooting](#troubleshooting)
    * [I'm seeing the "Session failed (Ignoring too frequent session. ...)" error](#ts-session-failed)
    * [Is my broadcast receiver capturing the install referrer?](#ts-broadcast-receiver)
