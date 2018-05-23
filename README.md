@@ -5,6 +5,8 @@ This is the Android SDK of Adjust™. You can read more about Adjust™ at [adju
 If your app is an app which uses web views and you would like to use Adjust tracking from Javascript code, please consult
 our [Android web views SDK guide](doc/english/web_views.md).
 
+---
+
 ### Quick Start
 
 * [Example app](#example-app)
