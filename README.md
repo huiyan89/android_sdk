@@ -811,6 +811,7 @@ The listener function will be called after the SDK tries to send a package to th
 Both event response data objects contain:
 
 - `String eventToken` the event token, if the package tracked was an event.
+- `String callbackId` the custom defined callback ID set on event object.
 
 If any value is unavailable, it will default to `null`.
 
