@@ -68,6 +68,8 @@ our [Android web views SDK guide](doc/english/web_views.md).
    * [User attribution](#user-attribution)
    * [Pre-installed trackers](#pre-installed-trackers)
    * [GDPR right to be forgotten](#gdpr-forget-me)
+   
+### [License](#license)
 
 ### Testing and Troubleshooting
 
@@ -75,7 +77,7 @@ our [Android web views SDK guide](doc/english/web_views.md).
    * [I'm seeing the "Session failed (Ignoring too frequent session. ...)" error](#ts-session-failed)
    * [Is my broadcast receiver capturing the install referrer?](#ts-broadcast-receiver)
    * [Can I trigger an event at application launch?](#ts-event-at-launch)
-* [License](#license)
+
 
 ---
 
