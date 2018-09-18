@@ -55,6 +55,7 @@ our [Android web views SDK guide](doc/english/web_views.md).
    * [Push token (Uninstall/Reinstall tracking)](#push-token)      
    * [Attribution callback](#attribution-callback)
    * [Session and event callbacks](#session-event-callbacks)
+   * [Callback identifier](#callback-id)
    * [Disable tracking](#disable-tracking)
    * [Offline mode](#offline-mode)
    * [Event buffering](#event-buffering)
@@ -816,6 +817,14 @@ If any value is unavailable, it will default to `null`.
 And both event and session failed objects also contain:
 
 - `boolean willRetry` indicates that will be an attempt to resend the package at a later time.
+
+### <a id="callback-id"></a>Callback identifier
+ You can also add custom string identifier to each event you want to track. This identifier will later be reported in event success and/or event failure callbacks to enable you to keep track on which event was successfully tracked or not. You can set this identifier by calling the `setCallbackId` method on your `AdjustEvent` instance:
+ ```java
+AdjustEvent event = new AdjustEvent("abc123");
+ event.setCallbackId("Your-Custom-Id");
+ Adjust.trackEvent(event);
+```
 
 ### <a id="disable-tracking"></a>Disable tracking
 
