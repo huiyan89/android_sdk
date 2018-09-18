@@ -10,6 +10,7 @@ our [Android web views SDK guide](doc/english/web_views.md).
 ### Quick Start
 
 * [Example app](#example-app)
+* [Example Android TV app](#example-app-tv)
 * [Getting Started](#getting-started)
    * [Add the SDK to your project](#sdk-add)
    * [Add Google Play Services](#sdk-gps)
@@ -81,9 +82,13 @@ our [Android web views SDK guide](doc/english/web_views.md).
 
 ## <a id="early-steps"></a>Quick Start
 
-### <a id="example-apps"></a>Example apps
+### <a id="example-apps"></a>Example app
 
 There is an example app inside the [`example` directory][example]. You can open the Android project to see an example on how the Adjust SDK can be integrated.
+
+## <a id="example-app-tv"></a>Example Android TV app
+
+There is an example Android TV app inside the [`example-tv` directory][example-tv]. You can open the Android project to see an example on how the Adjust SDK can be integrated into an Android TV app.
 
 ### <a id="getting-started"></a> Getting Started
 
@@ -1092,6 +1097,7 @@ Adjust.gdprForgetMe(context);
 
 [maven]:                          http://maven.org
 [example]:                        https://github.com/adjust/android_sdk/tree/master/Adjust/example
+[example-tv]:                     https://github.com/adjust/android_sdk/tree/master/Adjust/example-tv
 [releases]:                       https://github.com/adjust/adjust_android_sdk/releases
 [referrer]:                       doc/english/referrer.md
 [google_ad_id]:                   https://support.google.com/googleplay/android-developer/answer/6048248?hl=en
