@@ -395,9 +395,7 @@ Build and run your Android app. In your `LogCat` viewer you can set the filter `
 
 ![][log_message]
 
-## Deep linking
-
-### <a id="deeplinking"></a>Deep linking
+## <a id="deeplinking"></a>Deep linking
 
 If you are using an Adjust tracker URL with the option to deep link into your app, there is the possibility to get information about the deep link URL and its content. Hitting the URL can happen when the user has your app already installed (standard deep linking scenario) or if they don't have the app on their device (deferred deep linking scenario). In the standard deep linking scenario, the Android platform natively offers the possibility for you to get the information about the deep link content. The deferred deep linking scenario is something which the Android platform doesn't support out of the box, and, in this case, the Adjust SDK will offer you the mechanism you need to get the information about the deep link content.
 
