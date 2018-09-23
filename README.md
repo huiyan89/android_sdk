@@ -68,16 +68,14 @@ our [Android web views SDK guide](doc/english/web_views.md).
    * [Offline mode](#offline-mode)
    * [Disable tracking](#disable-tracking)
    * [GDPR right to be forgotten](#gdpr-forget-me)
-   
-### [License](#license)
 
 ### Testing and Troubleshooting
 
-* [Troubleshooting](#troubleshooting)
    * [I'm seeing the "Session failed (Ignoring too frequent session. ...)" error](#ts-session-failed)
    * [Is my broadcast receiver capturing the install referrer?](#ts-broadcast-receiver)
    * [Can I trigger an event at application launch?](#ts-event-at-launch)
 
+### [License](#license)
 
 ---
 
