@@ -71,6 +71,8 @@ our [Android web views SDK guide](doc/english/web_views.md).
    
 ### [License](#license)
 
+---
+
 ### Testing and Troubleshooting
 
 * [Troubleshooting](#troubleshooting)
