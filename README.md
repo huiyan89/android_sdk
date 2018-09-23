@@ -389,6 +389,22 @@ config.setLogLevel(LogLevel.SUPRESS);
 Adjust.onCreate(config);
 ```
 
+### <a id="sdk-signature"></a>SDK signature
+
+An account manager must activate the Adjust SDK signature. Contact Adjust support (support@adjust.com) if you are interested in using this feature.
+
+If the SDK signature has already been enabled on your account and you have access to App Secrets in your Adjust Dashboard, please use the method below to integrate the SDK signature into your app.
+
+An App Secret is set by calling `setAppSecret` on your `AdjustConfig` instance:
+
+```java
+AdjustConfig config = new AdjustConfig(this, appToken, environment);
+
+config.setAppSecret(secretId, info1, info2, info3, info4);
+
+Adjust.onCreate(config);
+```
+
 ### <a id="build-the-app"></a>Build your app
 
 Build and run your Android app. In your `LogCat` viewer you can set the filter `tag:Adjust` to hide all other logs. After your app has launched you should see the following Adjust log: `Install tracked`
@@ -846,6 +862,28 @@ You can activate offline mode by calling `setOfflineMode` with the parameter `tr
 Adjust.setOfflineMode(true);
 ```
 
+### <a id="pre-installed-trackers"></a>Pre-installed trackers
+
+If you want to use the Adjust SDK to recognize users whose devices came with your app pre-installed, follow these steps.
+
+1. Create a new tracker in your [dashboard].
+2. Open your app delegate and add set the default tracker of your `AdjustConfig`:
+
+  ```java
+  AdjustConfig config = new AdjustConfig(this, appToken, environment);
+  config.setDefaultTracker("{TrackerToken}");
+  Adjust.onCreate(config);
+  ```
+
+  Replace `{TrackerToken}` with the tracker token you created in step 1. Please note that the Dashboard displays a tracker URL (including `http://app.adjust.com/`). In your source code, you should specify only the six-character token and not the 
+  entire URL.
+
+3. Build and run your app. You should see a line like the following in your LogCat:
+
+    ```
+    Default tracker: 'abc123'
+    ```
+
 Conversely, you can deactivate offline mode by calling `setOfflineMode` with `false`. When the Adjust SDK is put back in online mode, all saved information is sent to our servers with the correct time information.
 
 Unlike disabling tracking, this setting is **not remembered** between sessions. This means that the SDK is in online mode whenever it is started, even if the app was terminated in offline mode.
@@ -858,22 +896,6 @@ If your app makes heavy use of event tracking, you might want to delay some HTTP
 AdjustConfig config = new AdjustConfig(this, appToken, environment);
 
 config.setEventBufferingEnabled(true);
-
-Adjust.onCreate(config);
-```
-
-### <a id="sdk-signature"></a>SDK signature
-
-An account manager must activate the Adjust SDK signature. Contact Adjust support (support@adjust.com) if you are interested in using this feature.
-
-If the SDK signature has already been enabled on your account and you have access to App Secrets in your Adjust Dashboard, please use the method below to integrate the SDK signature into your app.
-
-An App Secret is set by calling `setAppSecret` on your `AdjustConfig` instance:
-
-```java
-AdjustConfig config = new AdjustConfig(this, appToken, environment);
-
-config.setAppSecret(secretId, info1, info2, info3, info4);
 
 Adjust.onCreate(config);
 ```
@@ -942,28 +964,6 @@ AdjustAttribution attribution = Adjust.getAttribution();
 **Note**: You can only make this call in the Adjust SDK v4.11.0 and above.
 
 **Note**: Information about current attribution is available after app installation has been tracked by the Adjust backend and attribution callback has been initially triggered. From that moment on, Adjust SDK has information about your user's attribution and you can access it with this method. So, **it is not possible** to access user's attribution value before the SDK has been initialized and attribution callback has been initially triggered.
-
-### <a id="pre-installed-trackers"></a>Pre-installed trackers
-
-If you want to use the Adjust SDK to recognize users whose devices came with your app pre-installed, follow these steps.
-
-1. Create a new tracker in your [dashboard].
-2. Open your app delegate and add set the default tracker of your `AdjustConfig`:
-
-  ```java
-  AdjustConfig config = new AdjustConfig(this, appToken, environment);
-  config.setDefaultTracker("{TrackerToken}");
-  Adjust.onCreate(config);
-  ```
-
-  Replace `{TrackerToken}` with the tracker token you created in step 1. Please note that the Dashboard displays a tracker URL (including `http://app.adjust.com/`). In your source code, you should specify only the six-character token and not the 
-  entire URL.
-
-3. Build and run your app. You should see a line like the following in your LogCat:
-
-    ```
-    Default tracker: 'abc123'
-    ```
 
 ### <a id="gdpr-forget-me"></a>GDPR right to be forgotten
  In accordance with article 17 of the EU's General Data Protection Regulation (GDPR), you can notify Adjust when a user has exercised their right to be forgotten. Calling the following method will instruct the Adjust SDK to communicate the user's choice to be forgotten to the Adjust backend:
