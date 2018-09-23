@@ -55,19 +55,18 @@ our [Android web views SDK guide](doc/english/web_views.md).
 
    * [Push token (Uninstall/Reinstall tracking)](#push-token)      
    * [Attribution callback](#attribution-callback)
+   * [User attribution](#user-attribution)
    * [Session and event callbacks](#session-event-callbacks)
    * [Callback identifier](#callback-id)
-   * [Disable tracking](#disable-tracking)
-   * [Offline mode](#offline-mode)
-   * [Event buffering](#event-buffering)
-   * [SDK signature](#sdk-signature)
-   * [Background tracking](#background-tracking)
    * [Device IDs](#device-ids)
       * [Google Play Services advertising identifier](#di-gps-adid)
       * [Amazon advertising identifier](#di-amz-adid)
-      * [Adjust device identifier](#di-adid)
-   * [User attribution](#user-attribution)
+      * [Adjust device identifier](#di-adid)  
    * [Pre-installed trackers](#pre-installed-trackers)
+   * [Background tracking](#background-tracking)
+   * [Event buffering](#event-buffering)
+   * [Offline mode](#offline-mode)
+   * [Disable tracking](#disable-tracking)
    * [GDPR right to be forgotten](#gdpr-forget-me)
    
 ### [License](#license)
@@ -889,18 +888,6 @@ Conversely, you can deactivate offline mode by calling `setOfflineMode` with `fa
 
 Unlike disabling tracking, this setting is **not remembered** between sessions. This means that the SDK is in online mode whenever it is started, even if the app was terminated in offline mode.
 
-### <a id="event-buffering"></a>Event buffering
-
-If your app makes heavy use of event tracking, you might want to delay some HTTP requests in order to send them in one batch every minute. You can enable event buffering with your `AdjustConfig` instance:
-
-```java
-AdjustConfig config = new AdjustConfig(this, appToken, environment);
-
-config.setEventBufferingEnabled(true);
-
-Adjust.onCreate(config);
-```
-
 ### <a id="background-tracking"></a>Background tracking
 
 The default behaviour of the Adjust SDK is to pause sending HTTP requests while the app is in the background. You can change this in your `AdjustConfig` instance:
@@ -909,6 +896,18 @@ The default behaviour of the Adjust SDK is to pause sending HTTP requests while 
 AdjustConfig config = new AdjustConfig(this, appToken, environment);
 
 config.setSendInBackground(true);
+
+Adjust.onCreate(config);
+```
+
+### <a id="event-buffering"></a>Event buffering
+
+If your app makes heavy use of event tracking, you might want to delay some HTTP requests in order to send them in one batch every minute. You can enable event buffering with your `AdjustConfig` instance:
+
+```java
+AdjustConfig config = new AdjustConfig(this, appToken, environment);
+
+config.setEventBufferingEnabled(true);
 
 Adjust.onCreate(config);
 ```
