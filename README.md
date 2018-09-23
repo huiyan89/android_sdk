@@ -24,6 +24,7 @@ our [Android web views SDK guide](doc/english/web_views.md).
       * [API level 14 and higher](#session-tracking-api14)
       * [API level between 9 and 13](#session-tracking-api9)
    * [Adjust logging](#adjust-logging)
+   * [SDK signature](#sdk-signature)
    * [Build your app](#build-the-app)
    
 ### Deep linking
